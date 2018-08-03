@@ -55,7 +55,54 @@ body, html {
   padding-top: 20rem;
 }
 
-#works, a {
+#myTab, a {
   padding-top: 4rem;
   color: white;
+  
 }
+
+#novels {
+  height: 1000px;
+  
+}
+
+@media (max-width: 575.98px) { 
+  #space {
+    padding-top: 200rem;
+  }
+ }
+
+@media (min-width: 576px) { 
+  #space {
+    padding-top: 45rem;
+  }
+ }
+
+
+@media (min-width: 768px) { 
+  #space {
+    padding-top: 30rem;
+  }
+ }
+
+
+@media (min-width: 992px) { 
+  #space {
+    padding-top: 20rem;
+  }
+ }
+
+
+@media (min-width: 1200px) { 
+  #space {
+    padding-top: 700px;
+    
+  }
+ }
+
+ #b-main {
+   padding-top: 5rem;
+ }
+
+
+
