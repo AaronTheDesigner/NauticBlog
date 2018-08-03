@@ -1,4 +1,5 @@
 {% extends 'base_layout.html' %}
+{%load static%}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,17 +11,65 @@
 </head>
 <body>
   {%block content%}
+  <!--top-->
   <div class="container-fluid" id="top">
   </div>
-  <div class="container-fluid" id="about">
-    About
+
+  <!--about-->
+  <div class="container-fluid jaypic" id="about">
+    <div class="bio">
+    <h1>Jay Requard</h1>
+    <h2>Author, Podcaster</h2>
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium accusantium numquam quis. Quo iure ipsa at aliquid, explicabo repellat, fugiat voluptates aperiam distinctio ea laboriosam velit hic mollitia eaque alias</p>
   </div>
-  <div class="container-fluid" id="works">
-    Works
   </div>
+
+  <!--works-->
+  
+  <div class="container-fluid jaypic" id="works">
+    
+    <!--tabnav-->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="novels-tab" data-toggle="tab" href="#novels" role="tab" aria-controls="novels" aria-selected="true">Novels</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="novellas-tab" data-toggle="tab" href="#novellas" role="tab" aria-controls="novellas" aria-selected="false">Novellas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="shorts-tab" data-toggle="tab" href="#shorts" role="tab" aria-controls="shorts" aria-selected="false">Shorts & Collections</a>
+        </li>
+      </ul>
+      <!--tabContent-->
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="novels" role="tabpanel" aria-labelledby="novels-tab">NOVELS</div>
+        
+        <div class="tab-pane fade" id="novellas" role="tabpanel" aria-labelledby="novellas-tab">NOVELLAS</div>
+        
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">SHORTS & COLLECTIONS</div>
+      </div>
+  </div>
+
+  <!--events-->
   <div class="container-fluid" id="events">
-    Events
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="{% static "dragon.jpg"%}" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="{% static "balticon-51.jpg"%}" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="{% static "NY_comicon.png"%}" alt="Third slide">
+            </div>
+          </div>
+        </div>
   </div>
+
+  <!--footer-->
+
   {%endblock%}
 </body>
 </html>

@@ -5,6 +5,6 @@ def homepage(request):
   #return HttpResponse('homepage')
   return render(request, 'homepage.html')
 
-def about(request):
+def podcast(request):
   #return HttpResponse('about')
-  return render(request, 'about.html')
+  return render(request, 'podcast.html')

@@ -10,3 +10,52 @@ body, html {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+
+.jaypic {
+  background-image: url("jay.png");
+  height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.bio {
+  color: white;
+  padding-top: 28rem;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f5f5f5;
+}
+
+.embed {
+  padding: 1.5rem;
+  margin-right: 0;
+  margin-left: 0;
+  border-width: .2rem;
+}
+
+.embed {
+  position: relative;
+  padding: 1rem;
+  margin: 1rem -15px 0;
+  border: solid #f7f7f9;
+  border-width: .2rem 0 0;
+}
+
+#podcast {
+  color: white;
+  padding-top: 20rem;
+}
+
+#works, a {
+  padding-top: 4rem;
+  color: white;
+}
