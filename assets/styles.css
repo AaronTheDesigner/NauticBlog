@@ -2,19 +2,21 @@ body, html {
   height: 100%
 }
 
-#top {
-  background-image: url("BM.jpg");
-  height: 100%;
 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
 
 .jaypic {
   background-image: url("jay.png");
   height: 100%;
 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.jayfoot {
+  background-image: url("jay.png");
+  height: 300px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -58,6 +60,7 @@ body, html {
 #myTab, a {
   padding-top: 4rem;
   color: white;
+  text-decoration: none;
   
 }
 
@@ -69,6 +72,14 @@ body, html {
 @media (max-width: 575.98px) { 
   #space {
     padding-top: 200rem;
+  }
+  #top {
+    background-image: url("BMtiny.jpg");
+    height: 100%;
+  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
  }
 
@@ -83,12 +94,28 @@ body, html {
   #space {
     padding-top: 30rem;
   }
+  #top {
+    background-image: url("BMtab.jpg");
+    height: 100%;
+  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
  }
 
 
 @media (min-width: 992px) { 
   #space {
     padding-top: 20rem;
+  }
+  #top {
+    background-image: url("BMed.jpg");
+    height: 100%;
+  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
  }
 
@@ -98,12 +125,31 @@ body, html {
     padding-top: 700px;
     
   }
+  #top {
+    background-image: url("BM.jpg");
+    height: 100%;
+  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
  }
 
  #b-main {
    padding-top: 3rem;
  }
 
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: white;
+}
 
+.article-content {
+  margin: 40px;
+}
+
+#article-pic {
+  align-self: center;
+}
 
 

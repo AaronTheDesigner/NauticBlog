@@ -1,12 +1,26 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
-<div class="article-detail">
-  <div class="article">
-    <img src="{{ article.thumb.url}}" alt="">
-    <h2>{{article.title}}</h2>
-    <p>{{article.body}}</p>
-    <p>{{article.date}}</p>
+<div class="container-fluid">
+  <div class="row jaypic">
+    <div class="container">
+      <br>
+      <br>
+      <br>
+      <div class="card article-detail">
+        <div class="article card-text">
+          <br>
+          <img class="mx-auto d-block" align="middle" src="{{ article.thumb.url}}" alt="">
+            <div class="article-content">
+              <h2>{{article.title}}</h2>
+              <p>{{article.body | linebreaks}}</p>
+              <p>{{article.date}}</p>
+            </div>
+        </div>
+      </div>
+      <br>
+      <br>
+    </div>
   </div>
 </div>
 {% endblock %}

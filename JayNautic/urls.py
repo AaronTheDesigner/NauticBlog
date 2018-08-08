@@ -24,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('articles/', include('articles.urls')),
     path('podcast/', views.podcast, name='podcast'),
-    path('', views.homepage, name='home')
+    path('', views.homepage, name='home'),
+    path('tinymce/', include('tinymce.urls'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()

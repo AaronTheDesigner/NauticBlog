@@ -9,10 +9,13 @@
   <title>Document</title>
 </head>
 {% block content %}
+
 <body>
   <div class="jaypic text-center" id="podcast">
-    <h1>Podcast Title</h1>
-    <h2>podcast description</h2>
+    {% for podcast in podcasts %}
+    <h1>{{podcast.title}}</h1>
+    <h2>{{podcast.description}}</h2>
+    {% endfor %}
   </div>
   <div class="jaypic">
   <div class="row" style="margin-right: 0px;">
@@ -33,5 +36,6 @@
     <h1>More episodes coming soon!</h1>
   </div>
 </body>
+
 {% endblock %}
 </html>

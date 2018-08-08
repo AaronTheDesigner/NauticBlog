@@ -20,9 +20,9 @@
             <!--Blog Post-->
             {% for article in articles %}
             <div class="card mb-4 b-article bg-dark">
-              <img src="http://placehold.it/750x300" alt="" class="card-img-top">
+              <img src="{{article.thumb.url}}" alt="" class="card-img-top">
               <div class="card-body">
-                <h2 class="card-title"><a href="{% url 'articles:detail' slug=article.slug %}">{{ article.title}}</a></h2>
+                <h2 class="card-title"><a href="{% url 'articles:detail' slug=article.slug %}">{{ article.title }}</a></h2>
                 <p class="card-text text-white">{{ article.snippet }}</p>
               </div>
               <div class="card-footer text-white">

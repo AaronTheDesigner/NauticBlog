@@ -1,10 +1,17 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from articles.models import Article, Cover, Novel, Event, Podcast
 
 def homepage(request):
   #return HttpResponse('homepage')
-  return render(request, 'homepage.html')
+  covers = Cover.objects.all()
+  novels = Novel.objects.all()
+  events = Event.objects.all()
+  
+
+  return render(request, 'homepage.html', {'covers': covers, 'novels': novels, 'events': events})
 
 def podcast(request):
   #return HttpResponse('about')
-  return render(request, 'podcast.html')
+  podcasts = Podcast.objects.all()
+  return render(request, 'podcast.html', {'podcasts': podcasts})
