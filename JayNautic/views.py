@@ -15,3 +15,4 @@ def podcast(request):
   #return HttpResponse('about')
   podcasts = Podcast.objects.all()
   return render(request, 'podcast.html', {'podcasts': podcasts})
+
