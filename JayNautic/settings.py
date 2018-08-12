@@ -10,9 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
-import django_heroku
+#import django_heroku
 import os
-import dj_database_url
+
 
 
 
@@ -81,9 +81,13 @@ WSGI_APPLICATION = 'JayNautic.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
 
 
 
@@ -138,6 +142,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 
 
