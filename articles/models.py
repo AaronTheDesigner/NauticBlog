@@ -1,11 +1,12 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 #Fo Blog
 class Article(models.Model):
   title = models.CharField(max_length=100)
   slug = models.SlugField()
-  body = models.TextField()
+  body = RichTextField()
   date = models.DateTimeField(auto_now_add=True)
   thumb = models.ImageField(default="jay.png", blank=True)
   #add in author later
@@ -20,7 +21,7 @@ class Article(models.Model):
 class Cover(models.Model):
   name = models.CharField(max_length=50)
   profession = models.CharField(max_length=50)
-  description = models.TextField()
+  description = RichTextField()
 
 class Novel(models.Model):
   title_1 = models.CharField(max_length=50)
@@ -80,6 +81,12 @@ class Event(models.Model):
 class Podcast(models.Model):
   title = models.CharField(max_length=50)
   description = models.TextField()
+
+class Feature(models.Model):
+  title = models.CharField(max_length=50)
+  cover = models.ImageField()
+  blurb = RichTextField()
+
 
 
 #For categories in the Works section

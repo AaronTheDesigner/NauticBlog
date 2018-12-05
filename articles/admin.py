@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Article, Cover, Novel, Event, Podcast, Novella, Short
+from .models import Article, Cover, Novel, Event, Podcast, Novella, Short, Feature
 
 # Register your models here.
 admin.site.register(Article)
@@ -9,4 +9,5 @@ admin.site.register(Event)
 admin.site.register(Podcast)
 admin.site.register(Novella)
 admin.site.register(Short)
+admin.site.register(Feature)
 

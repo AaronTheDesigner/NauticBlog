@@ -13,7 +13,7 @@
           <img class="mx-auto d-block" align="middle" src="{{ article.thumb.url}}" alt="">
             <div class="article-content">
               <h2>{{article.title}}</h2>
-              <p>{{article.body | linebreaks}}</p>
+              <p>{{article.body | safe}}</p>
               <p>{{article.date}}</p>
             </div>
         </div>

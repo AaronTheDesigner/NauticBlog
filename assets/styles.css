@@ -2,7 +2,13 @@ body, html {
   height: 100%
 }
 
+#fblurb {
+  background-color: black;
+}
 
+.lora {
+  font-family: 'Lora', serif;
+}
 
 .jaypic {
   background-image: url("jay.png");
@@ -74,16 +80,22 @@ body, html {
     padding-top: 200rem;
   }
   #top {
-    background-image: url("BMtiny.jpg");
+    background-image: url("BMfinal.jpg");
     height: 100%;
   
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
+  #works {
+    padding-top: 150px;
+  }
  }
 
 @media (min-width: 576px) { 
+  #works {
+    padding-top: 100px;
+  }
   #space {
     padding-top: 45rem;
   }
@@ -91,11 +103,14 @@ body, html {
 
 
 @media (min-width: 768px) { 
+  #works {
+    padding-top: 100px;
+  }
   #space {
     padding-top: 30rem;
   }
   #top {
-    background-image: url("BMtab.jpg");
+    background-image: url("BMfinal.jpg");
     height: 100%;
   
     background-position: center;
@@ -106,11 +121,14 @@ body, html {
 
 
 @media (min-width: 992px) { 
+  #works {
+    padding-top: 50px;
+  }
   #space {
     padding-top: 20rem;
   }
   #top {
-    background-image: url("BMed.jpg");
+    background-image: url("BMfinal.jpg");
     height: 100%;
   
     background-position: center;
@@ -121,12 +139,15 @@ body, html {
 
 
 @media (min-width: 1200px) { 
+  #works {
+    padding-top: 100px;
+  }
   #space {
-    padding-top: 700px;
+    padding-top: 800px;
     
   }
   #top {
-    background-image: url("BM.jpg");
+    background-image: url("BMfinal.jpg");
     height: 100%;
   
     background-position: center;
