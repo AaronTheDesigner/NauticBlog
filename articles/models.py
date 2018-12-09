@@ -22,22 +22,29 @@ class Cover(models.Model):
   name = models.CharField(max_length=50)
   profession = models.CharField(max_length=50)
   description = RichTextField()
+  author = RichTextField()
+  blogger = RichTextField()
+  podcaster = RichTextField()
+  link_1 = models.URLField()
 
 class Novel(models.Model):
   title_1 = models.CharField(max_length=50)
   cover_1 = models.ImageField()
-  blurb_1 = models.TextField()
+  blurb_1 = RichTextField()
+  link_1 = models.URLField()
 
 class Novella(models.Model):
   title_1 = models.CharField(max_length=50)
   cover_1 = models.ImageField()
-  blurb_1 = models.TextField()
+  blurb_1 = RichTextField()
+  link_1 = models.URLField()
 
 
 class Short(models.Model):
   title_1 = models.CharField(max_length=50)
   cover_1 = models.ImageField()
-  blurb_1 = models.TextField()
+  blurb_1 = RichTextField
+  link_1 = models.URLField()
 
 
 class Event(models.Model):

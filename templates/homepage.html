@@ -55,14 +55,14 @@
 
   <!-- photo / grid -->
   <section class="container section" id="works">
-    {% for novel in novels %}
+    {% for feature in features %}
     <div class="row">
       <div class="col s12 l4">
-        <img src="{{novel.cover_2.url}}" alt="#" class="responsive-img">
+        <img src="{{feature.cover.url}}" alt="#" class="responsive-img">
       </div>
       <div class="col s12 l6 offset-l1">
-        <h2 class="indigo-text text-darken-4 lora">{{novel.title_2}}</h2>
-        <p>{{novel.blurb_2}}</p>
+        <h2 class="indigo-text text-darken-4 lora">{{feature.title}}</h2>
+        <p>{{feature.blurb | safe}}</p>
       </div>
     </div>
     {% endfor %}
@@ -98,11 +98,11 @@
                                 </div>
                                 <div class="card-content">
                                   <span class="card-title activator grey-text text-darken-4 lora">{{novel.title_1}}<i class="material-icons right">more_vert</i></span>
-                                  <p><a href="#" class="lora">This is a link</a></p>
+                                  <p><a href="{{novel.link_1}}" class="lora">Purchase</a></p>
                                 </div>
                                 <div class="card-reveal">
                                   <span class="card-title grey-text text-darken-4 lora">{{novel.title_1}}<i class="material-icons right">close</i></span>
-                                  <p>{{novel.blurb_1}}</p>
+                                  <p>{{novel.blurb_1 | safe}}</p>
                                 </div>
                         </div>
                   </div>
@@ -123,11 +123,11 @@
                                       </div>
                                       <div class="card-content">
                                         <span class="card-title activator grey-text text-darken-4 lora">{{novella.title_1}}<i class="material-icons right">more_vert</i></span>
-                                        <p><a href="#">This is a link</a></p>
+                                        <p><a href="{{novella.link_1}}">Purchase</a></p>
                                       </div>
                                       <div class="card-reveal">
                                         <span class="card-title grey-text text-darken-4 lora">{{novella.title_1}}<i class="material-icons right">close</i></span>
-                                        <p>{{novella.blurb_1}}</p>
+                                        <p>{{novella.blurb_1 | safe}}</p>
                                       </div>
                               </div>
                         </div>
@@ -146,7 +146,7 @@
                                       </div>
                                       <div class="card-content">
                                         <span class="card-title activator grey-text text-darken-4 lora">{{short.title_1}}<i class="material-icons right">more_vert</i></span>
-                                        <p><a href="#">This is a link</a></p>
+                                        <p><a href="{{short.link_1}}">Purchase</a></p>
                                       </div>
                                       <div class="card-reveal">
                                         <span class="card-title grey-text text-darken-4 lora">{{short.title_1}}<i class="material-icons right">close</i></span>
@@ -177,7 +177,7 @@
         <h2 class="indigo-text text-darken-4 lora">{{cover.name}}</h2>
         <h3 class="indigo-text text-darken-4 lora">{{cover.profession}}</h3>
           <p>{{cover.description | safe}}</p>
-        {% endfor %}
+        
       
       </div>
       <div class="col s12 l6 offsett-l2">
@@ -194,30 +194,21 @@
         </ul>
         <div class="col s12" id="author">
           <p class="flow-text indigo-text text-darken-4 lora">Author</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-              Reiciendis incidunt a mollitia, delectus porro sint consectetur,
-               doloremque sunt repellat quis perspiciatis blanditiis recusandae 
-               vero illum corporis est nostrum quaerat neque.</p>
+          <p>{{cover.author | safe}}</p>
                <ul>
                <li><a class="waves-effect waves-light btn indigo darken-4 lora" href="#events">Events</a></li>
                </ul>
         </div>
         <div class="col s12" id="blogger">
             <p class="flow-text indigo-text text-darken-4 lora">Blogger</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Reiciendis incidunt a mollitia, delectus porro sint consectetur,
-                 doloremque sunt repellat quis perspiciatis blanditiis recusandae 
-                 vero illum corporis est nostrum quaerat neque.</p>
+            <p>{{cover.blogger | safe}}</p>
                  <ul>
                  <li><a class="waves-effect waves-light btn indigo darken-4 lora" href="{% url 'articles:list' %}">Blog</a></li>
                  </ul>
           </div>
           <div class="col s12" id="podcaster">
               <p class="flow-text indigo-text text-darken-4 lora">Podcaster</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                  Reiciendis incidunt a mollitia, delectus porro sint consectetur,
-                   doloremque sunt repellat quis perspiciatis blanditiis recusandae 
-                   vero illum corporis est nostrum quaerat neque.</p>
+              <p>{{cover.podcaster | safe}}</p>
                    <div class="video-container">
                      <div class="row">
                        <div class="col s12">
@@ -234,6 +225,7 @@
                       <li><a class="waves-effect waves-light btn indigo darken-4 lora" href="#">YouTube Channel</a></li>
                    </ul>                   
             </div>
+            {% endfor %}
       </div>
     
     </div>
