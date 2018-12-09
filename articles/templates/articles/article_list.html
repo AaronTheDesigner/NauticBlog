@@ -1,66 +1,134 @@
-{% extends 'base_layout.html' %}
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+  <link rel="stylesheet" href="{% static 'Lora-Regular.tff' %}">
+  <title>Books For The March</title>
 
-<!DOCTYPE html>
 
+
+</head>
 <body>
-  {%block content%}
 
-  <div class="" id="b-main">
-    <!--page content-->
-    <div class="container-fluid jaypic">
+  <header>
+    <nav class="nav-wrapper transparent">
+      <div class="container" id="home">
+        <a href="{% url 'home' %}" class="brand-logo lora">Jay Requard</a>
+        <a href="" class="sidenav-trigger" data-target="mobile-menu">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="waves-effect waves-light btn indigo darken-4 lora" href="{% url 'home' %}">Home</a></li>
+          <li><a href="#articles" class="lora">Articles</a></li>
+          <li><a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-tooltip="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a></li>
+          <li><a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-tooltip="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a></li>
+          <li><a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-tooltip="Linked In">
+            <i class="fab fa-linkedin"></i>
+          </a></li>
+        </ul>
+        <ul class="sidenav grey lighten-2" id="mobile-menu">
+          <li><a class="waves-effect waves-light btn indigo darken-4 lora" href="{% url 'home' %}">Home</a></li>
+          <li><a href="#articles" class="lora">Articles</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+  </header>
+
+  <!-- photo / grid -->
+    <div class="">
+    <div class="container" id="articles">
+            <div class="row">
+                <h1 class="lora">Blog</h1>
+                {% for article in articles %}
+                    <div class="col s12 m6">
+                        <div class="card">
+                          <div class="card-image">
+                            <a href="{% url 'articles:detail' slug=article.slug %}"><img src="{{article.thumb.url}}"></a>  
+                            <a href="{% url 'articles:detail' slug=article.slug %}"><span class="card-title lora">{{ article.title }}</span></a> 
+                            <a href="{% url 'articles:detail' slug=article.slug %}"class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">chevron_right</i></a>
+                          </div>
+                          <div class="card-content">
+                            <p>{{ article.snippet }}</p>
+                          </div>
+                        </div>
+                    </div>
+                {% endfor %}  
+                            
+            </div>
+    </div>
+    </div>
+
+    <footer class="page-footer grey darken-3">
       <div class="container">
         <div class="row">
-          <!--column-->
-          <div class="col-md-12">
-
-            <h1 class="my-4 text-white lora">Page Heading
-              <small>Secondary Text</small>
-            </h1>
-
-            <!--Blog Post-->
-            {% for article in articles %}
-            <div class="card mb-4 b-article bg-dark">
-              <img src="{{article.thumb.url}}" alt="" class="card-img-top">
-              <div class="card-body">
-                <h2 class="card-title lora"><a href="{% url 'articles:detail' slug=article.slug %}">{{ article.title }}</a></h2>
-                <p class="card-text text-white">{{ article.snippet }}</p>
-              </div>
-              <div class="card-footer text-white">
-                <p class="card-text">{{ article.date }}</p>
-              </div>
-            </div>
-            {% endfor %}
+          <div class="col s12 l6">
+            <h5 class="lora">About Me</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Reiciendis incidunt a mollitia, delectus porro sint consectetur,
+                 doloremque sunt repellat quis perspiciatis blanditiis recusandae 
+                 vero illum corporis est nostrum quaerat neque.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Reiciendis incidunt a mollitia, delectus porro sint consectetur,
+                doloremque sunt repellat quis perspiciatis blanditiis recusandae 
+                vero illum corporis est nostrum quaerat neque.</p>
           </div>
-          <!-- Sidebar Widgets Column -->
-          
+          <div class="col s12 l4 offset-l2">
+            <h5>Connect</h5>
+            <ul>
+              <li><a href="#" class="grey-text text-lighten-3">Twitter</a></li>
+              <li><a href="#" class="grey-text text-lighten-3">Facebook</a></li>
+              <li><a href="#" class="grey-text text-lighten-3">LinkedIn</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+      <div class="footer-copyright grey darken-4">
+        <div class="container center-align">&copy 2018 Aaron Toliver</div>
+      </div>
+    </footer>
 
-  <!--early draft
-  <h1>Article List</h1>
-  <div class="jaypic">
-    <div class="articles container" id="b-main">
-      <div class="row">
-        <div class="col-md-8">
-          <h1 class="my-4 text-white">Page Heading
-            <small>Secondary Text</small>
-          </h1>
-              {% for article in articles %}
-              <div class="article card mb-4">
-                <img src="http://placehold.it/750x300" alt="" class="card-img-top">
-                <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a></h2>
-                <p>{{article.snippet}}</p>
-                <p>{{article.date}}</p>
-              </div>
+    <div class="fixed-action-btn toolbar">
+            <a class="btn-floating btn-large indigo darken-4">
+              <i class="large material-icons">details</i>
+            </a>
+            <ul>
+              <li><a class="btn-floating indigo darken-4" href="{% url 'home' %}"><i class="material-icons">home</i></a></li>
+              <li><a class="btn-floating indigo darken-4" href="{% url 'articles:list' %}"><i class="material-icons">chrome_reader_mode</i></a></li>
+              <li><a class="btn-floating indigo darken-4 tooltipped" data-tooltip="Top" data-position="top" href="#home"><i class="material-icons">arrow_upward</i></a></li>
+            </ul>
         </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div> 
-  early draft-->
-  {%endblock%}
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+      $('.parallax').parallax();
+      $('.tabs').tabs();
+      $('.datepicker').datepicker();
+      $('.tooltipped').tooltip();
+      $('.modal').modal();
+      $('.fixed-action-btn').floatingActionButton({
+          toolbarEnabled: true
+      });      
+      $('.scrollspy').scrollSpy();
+      $('.slider').slider();
+    });
+  </script>
 </body>
-</div>
 </html>
